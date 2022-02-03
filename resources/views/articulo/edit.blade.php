@@ -3,11 +3,11 @@
 @section('contenido')
 <h2>Editar Registros</h2>
 
-<form action="/articulos/{{$articulo->id}}" method="POST"
+<form action="/articulos/{{$articulo->id}}" method="POST">
 @csrf
-@method('put')
+@method('PUT')
 
-<div class="mb-3">
+  <div class="mb-3">
     <label for="" class="form-label">Código</label>
     <input id="codigo" name="codigo" type="text" class="form-control" value="{{$articulo->codigo}}">
   </div>
@@ -21,6 +21,11 @@
   </div>
   <div class="mb-3">
     <label for="" class="form-label">Precio</label>
-    <input id="precio" name="precio" type="number" step="any" value="0.00" class="form-control" value="{{$articulo->precio}}">
+    <input id="precio" name="precio" type="number" class="form-control" value="{{$articulo->precio}}">
   </div>
+
+  <a href="/articulos" class="btn btn-secondary" tan-index="5">Cancelar</a>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
 @endsection
